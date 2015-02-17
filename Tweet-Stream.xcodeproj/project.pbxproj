@@ -15,6 +15,7 @@
 		430A337C1A93F076004CFE3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 430A337B1A93F076004CFE3D /* Images.xcassets */; };
 		430A337F1A93F076004CFE3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430A337D1A93F076004CFE3D /* LaunchScreen.xib */; };
 		430A338B1A93F076004CFE3D /* Tweet_StreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 430A338A1A93F076004CFE3D /* Tweet_StreamTests.m */; };
+		430A33951A93F12D004CFE3D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430A33941A93F12D004CFE3D /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		430A33841A93F076004CFE3D /* Tweet-StreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tweet-StreamTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		430A33891A93F076004CFE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		430A338A1A93F076004CFE3D /* Tweet_StreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet_StreamTests.m; sourceTree = "<group>"; };
+		430A33941A93F12D004CFE3D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				430A33951A93F12D004CFE3D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		430A335F1A93F076004CFE3D = {
 			isa = PBXGroup;
 			children = (
+				430A33941A93F12D004CFE3D /* MapKit.framework */,
 				430A336A1A93F076004CFE3D /* Tweet-Stream */,
 				430A33871A93F076004CFE3D /* Tweet-StreamTests */,
 				430A33691A93F076004CFE3D /* Products */,
