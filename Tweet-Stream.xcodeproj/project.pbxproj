@@ -112,9 +112,8 @@
 		430A335F1A93F076004CFE3D = {
 			isa = PBXGroup;
 			children = (
-				430A33961A93F30E004CFE3D /* Social.framework */,
-				430A33941A93F12D004CFE3D /* MapKit.framework */,
 				430A336A1A93F076004CFE3D /* Tweet-Stream */,
+				43F1EAE51A988CCB008D6721 /* Frameworks */,
 				430A33871A93F076004CFE3D /* Tweet-StreamTests */,
 				430A33691A93F076004CFE3D /* Products */,
 			);
@@ -140,7 +139,6 @@
 				430A337B1A93F076004CFE3D /* Images.xcassets */,
 				430A337D1A93F076004CFE3D /* LaunchScreen.xib */,
 				430A33721A93F076004CFE3D /* Tweet_Stream.xcdatamodeld */,
-				43F1EABA1A9889DA008D6721 /* STTwitter */,
 				430A336B1A93F076004CFE3D /* Supporting Files */,
 			);
 			path = "Tweet-Stream";
@@ -199,7 +197,8 @@
 				43F1EAD01A9889DA008D6721 /* STTwitterProtocol.h */,
 				43F1EAD11A9889DA008D6721 /* Vendor */,
 			);
-			path = STTwitter;
+			name = STTwitter;
+			path = "Tweet-Stream/STTwitter";
 			sourceTree = "<group>";
 		};
 		43F1EAD11A9889DA008D6721 /* Vendor */ = {
@@ -213,6 +212,16 @@
 				43F1EAD71A9889DA008D6721 /* STHTTPRequest.m */,
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		43F1EAE51A988CCB008D6721 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				430A33961A93F30E004CFE3D /* Social.framework */,
+				430A33941A93F12D004CFE3D /* MapKit.framework */,
+				43F1EABA1A9889DA008D6721 /* STTwitter */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

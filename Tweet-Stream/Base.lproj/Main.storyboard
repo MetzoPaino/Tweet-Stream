@@ -28,7 +28,21 @@
                             <constraint firstItem="3BC-cB-vKB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yaC-w1-0b4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MIz-vO-XvY"/>
+                    <navigationItem key="navigationItem" id="MIz-vO-XvY">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="CKC-2d-HdA">
+                            <connections>
+                                <action selector="see:" destination="BYZ-38-t0r" id="xny-ul-uYK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="78d-cK-WR0">
+                            <connections>
+                                <action selector="pressedTwitterButton:" destination="BYZ-38-t0r" id="U84-Ij-qWT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="3BC-cB-vKB" id="RK1-gH-8HJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
