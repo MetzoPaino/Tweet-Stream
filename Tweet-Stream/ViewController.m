@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "STTwitter.h"
 #import <MapKit/MapKit.h>
+#import <CoreData/CoreData.h>
+#import "Tweet.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,8 @@
 @property (nonatomic, strong) NSArray *bigArray;
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 
+
+//@property (nonatomic, strong) NSManagedObject *tweets;
 
 @end
 
@@ -27,6 +31,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    id delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Tweet" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.tweets = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    
 }
 - (IBAction)see:(id)sender {
     NSLog(@"%@", self.bigArray);
@@ -48,7 +64,7 @@
         
         
          self.request = [self.twitter postStatusesFilterUserIDs:nil
-                                             keywordsToTrack:@[@"Apple"]
+                                             keywordsToTrack:@[@"hi"]
                                        locationBoundingBoxes:nil
                                                    delimited:nil
                                                stallWarnings:nil
@@ -74,18 +90,68 @@
                                                        
                                                        NSLog(@"%@", coordinates2[0]);
                                                        
-                                                       NSNumber *lat = coordinates2[0];
-                                                       NSNumber *longitude = coordinates2[1];
+                                                       NSNumber *longitude = coordinates2[0];
+                                                       NSNumber *latitude = coordinates2[1];
 
                                                        
-                                                       CLLocationCoordinate2D coord5 = CLLocationCoordinate2DMake(longitude.doubleValue, lat.doubleValue);
+                                                       CLLocationCoordinate2D coord5 = CLLocationCoordinate2DMake(longitude.doubleValue, latitude.doubleValue);
                                                        MKPointAnnotation *annotation5 = [[MKPointAnnotation alloc] init];
-                                                       annotation5.title = @"judfjhdf";
-                                                       annotation5.subtitle = @"@metzopaino";
+                                                       annotation5.title = [response objectForKey:@"text"];
+                                                       NSDictionary *user = [response objectForKey:@"user"];
+
+                                                       annotation5.subtitle = [user objectForKey:@"screen_name"];
                                                        [annotation5 setCoordinate:coord5];
                                                        
                                                        
                                                        [self.map addAnnotation:annotation5];
+                                                       
+                                                       
+                                                       NSNumber *testNu = [response objectForKey:@"timestamp_ms"];
+                                                       
+                                                       NSTimeInterval seconds = [testNu doubleValue] / 1000;
+                                                       
+                                                       NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+                                                       
+                                                       
+                                                       
+                                                       NSManagedObjectContext *context = self.managedObjectContext;
+                                                       NSManagedObject *tweet = [NSEntityDescription
+                                                                                          insertNewObjectForEntityForName:@"Tweet"
+                                                                                          inManagedObjectContext:context];
+                                                       [tweet setValue:[response objectForKey:@"text"] forKey:@"text"];
+                                                       [tweet setValue:[user objectForKey:@"screen_name"] forKey:@"username"];
+                                                       [tweet setValue:longitude forKey:@"longitude"];
+                                                       [tweet setValue:latitude forKey:@"latitude"];
+                                                       [tweet setValue:date forKey:@"date"];
+//                                                       NSManagedObject *failedBankDetails = [NSEntityDescription
+//                                                                                             insertNewObjectForEntityForName:@"FailedBankDetails"
+//                                                                                             inManagedObjectContext:context];
+//                                                       [failedBankDetails setValue:[NSDate date] forKey:@"closeDate"];
+//                                                       [failedBankDetails setValue:[NSDate date] forKey:@"updateDate"];
+//                                                       [failedBankDetails setValue:[NSNumber numberWithInt:12345] forKey:@"zip"];
+//                                                       [failedBankDetails setValue:failedBankInfo forKey:@"info"];
+//                                                       [failedBankInfo setValue:failedBankDetails forKey:@"details"];
+                                                       NSError *error;
+                                                       if (![context save:&error]) {
+                                                           NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+                                                       }
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
                                                        
                                                    }
                                                }

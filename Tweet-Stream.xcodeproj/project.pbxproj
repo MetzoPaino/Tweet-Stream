@@ -30,6 +30,7 @@
 		43F1EAE21A9889DA008D6721 /* BAVPlistNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F1EAD31A9889DA008D6721 /* BAVPlistNode.m */; };
 		43F1EAE31A9889DA008D6721 /* JSONSyntaxHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F1EAD51A9889DA008D6721 /* JSONSyntaxHighlight.m */; };
 		43F1EAE41A9889DA008D6721 /* STHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F1EAD71A9889DA008D6721 /* STHTTPRequest.m */; };
+		43F1EAE81A98A21E008D6721 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F1EAE71A98A21E008D6721 /* Tweet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		43F1EAD51A9889DA008D6721 /* JSONSyntaxHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONSyntaxHighlight.m; sourceTree = "<group>"; };
 		43F1EAD61A9889DA008D6721 /* STHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHTTPRequest.h; sourceTree = "<group>"; };
 		43F1EAD71A9889DA008D6721 /* STHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHTTPRequest.m; sourceTree = "<group>"; };
+		43F1EAE61A98A21E008D6721 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		43F1EAE71A98A21E008D6721 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				430A33701A93F076004CFE3D /* AppDelegate.m */,
 				430A33751A93F076004CFE3D /* ViewController.h */,
 				430A33761A93F076004CFE3D /* ViewController.m */,
+				43F1EAE61A98A21E008D6721 /* Tweet.h */,
+				43F1EAE71A98A21E008D6721 /* Tweet.m */,
 				430A33781A93F076004CFE3D /* Main.storyboard */,
 				430A337B1A93F076004CFE3D /* Images.xcassets */,
 				430A337D1A93F076004CFE3D /* LaunchScreen.xib */,
@@ -333,6 +338,7 @@
 				43F1EADD1A9889DA008D6721 /* STTwitterAppOnly.m in Sources */,
 				43F1EAE21A9889DA008D6721 /* BAVPlistNode.m in Sources */,
 				43F1EAE11A9889DA008D6721 /* STTwitterOSRequest.m in Sources */,
+				43F1EAE81A98A21E008D6721 /* Tweet.m in Sources */,
 				430A33711A93F076004CFE3D /* AppDelegate.m in Sources */,
 				43F1EAE31A9889DA008D6721 /* JSONSyntaxHighlight.m in Sources */,
 				43F1EADF1A9889DA008D6721 /* STTwitterOAuth.m in Sources */,
